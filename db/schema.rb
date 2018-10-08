@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_08_151133) do
+ActiveRecord::Schema.define(version: 2018_10_08_154100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "completed_summits", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "mountain_id"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mountain_id"], name: "index_completed_summits_on_mountain_id"
+    t.index ["user_id"], name: "index_completed_summits_on_user_id"
+  end
 
   create_table "examples", force: :cascade do |t|
     t.text "text", null: false
@@ -46,5 +56,7 @@ ActiveRecord::Schema.define(version: 2018_10_08_151133) do
     t.index ["token"], name: "index_users_on_token", unique: true
   end
 
+  add_foreign_key "completed_summits", "mountains"
+  add_foreign_key "completed_summits", "users"
   add_foreign_key "examples", "users"
 end
