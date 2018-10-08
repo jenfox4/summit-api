@@ -46,6 +46,6 @@ class CompletedSummitsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def completed_summit_params
-      params.require(:completed_summit).permit(:user_id, :mountains_id, :notes)
+      params.require(:completed_summit).permit(:user_id, :mountain_id, :notes)
     end
 end
