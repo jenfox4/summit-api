@@ -26,6 +26,31 @@ Use the following demo credentials
 
 #### Back-end Development
 
+##### Catalog of Routes:
+
+###### Authentication
+
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| POST   | `/sign-up`             | `users#signup`    |
+| POST   | `/sign-in`             | `users#signin`    |
+| PATCH  | `/change-password/`    | `users#changepw`  |
+| DELETE | `/sign-out/`           | `users#signout`   |
+| GET    | `/users/:id`           | `users#show`      |
+
+
+###### Mountains
+
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| POST   | `/mountains`             | `mountains#create`  |
+| GET    | `/mountains`             | `mountains#index`   |
+| GET    | `/mountains/:id`         | `mountains#show`    |
+| PATCH  | `/mountains/:id`         | `mountains#update`  |
+| DELETE | `/mountains/:id`         | `mountains#destroy` |
+
+
+
 ## Future Goals
 
 ## Links
