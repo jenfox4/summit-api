@@ -1,9 +1,9 @@
-class CompletedSummitsController < ApplicationController
+class CompletedSummitsController < ProtectedController
   before_action :set_completed_summit, only: [:show, :update, :destroy]
 
   # GET /completed_summits
   def index
-    @completed_summits = CompletedSummit.all
+    @completed_summits = current_user.completed_summits.all
 
     render json: @completed_summits
   end
@@ -15,7 +15,7 @@ class CompletedSummitsController < ApplicationController
 
   # POST /completed_summits
   def create
-    @completed_summit = CompletedSummit.new(completed_summit_params)
+    @completed_summit = current_user.completed_summits.build(completed_summit_params)
 
     if @completed_summit.save
       render json: @completed_summit, status: :created, location: @completed_summit
@@ -41,7 +41,7 @@ class CompletedSummitsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_completed_summit
-      @completed_summit = CompletedSummit.find(params[:id])
+      @completed_summit = current_user.completedSummit.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
