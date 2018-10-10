@@ -41,7 +41,7 @@ class CompletedSummitsController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_completed_summit
-      @completed_summit = current_user.completedSummit.find(params[:id])
+      @completed_summit = current_user.completed_summits.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
