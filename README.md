@@ -12,12 +12,12 @@ Use the following demo credentials
 **Password:** demo
 
 ## Installation Guide
-### Front End Installation (this repo)
+### Front End Installation (https://github.com/jenfox4/summit-client)
 1. Fork and Clone this repository.
 2. Install dependencies with `npm install`.
 3. Run the development server with npm start.
 
-### Back end Installation (https://github.com/jenfox4/summit-api)
+### Back end Installation (this repo)
 1. Fork and Clone this repository.
 2. Install dependencies with `bundle install.`
 3. Run the development server with npm start.
