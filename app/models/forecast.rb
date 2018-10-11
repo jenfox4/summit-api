@@ -13,7 +13,7 @@ class Forecast
   end
 
   def weather_data
-    self.class.get("/#{DARKSKYKEY}/#{@latitude},#{@longitude}")
+    self.class.get("/#{DARKSKYKEY}/#{@longitude},#{@latitude}")
   end
 
   def weather
