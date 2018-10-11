@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_10_08_154100) do
     t.string "distance_to_summit"
     t.string "latitude"
     t.string "longitude"
+    t.string "image"
     t.text "features"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

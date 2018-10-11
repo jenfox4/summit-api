@@ -23,6 +23,7 @@ csv.each do |row|
   t.distance_to_summit = row['DISTANCE']
   t.latitude = row['LATITUDE']
   t.longitude = row['LONGITUDE']
+  t.image = row['IMAGE']
   t.features = row['FEATURES']
 
   t.save

@@ -8,6 +8,7 @@ class CreateMountains < ActiveRecord::Migration[5.2]
       t.string :distance_to_summit
       t.string :latitude
       t.string :longitude
+      t.string :image
       t.text :features
 
       t.timestamps
