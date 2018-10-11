@@ -7,13 +7,13 @@ class Forecast
   base_uri 'https://api.darksky.net/forecast'
   DARKSKYKEY = ENV['DARK_SKY_KEY']
 
-  def initialize(latitude, longitude)
-    @latitude = latitude
-    @longitude = longitude
+  def initialize(long, lat)
+    @longitude = long
+    @latitude = lat
   end
 
   def weather_data
-    self.class.get("/#{DARKSKYKEY}/#{@longitude},#{@latitude}")
+    self.class.get("/#{DARKSKYKEY}/#{@latitude},#{@longitude}")
   end
 
   def weather

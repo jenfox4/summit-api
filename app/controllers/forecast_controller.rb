@@ -2,11 +2,11 @@
 
 class ForecastController < OpenReadController
   def index
-    @weather = Forecast.new(coordinates[:longitude], coordinates[:latitude]).weather
+    @weather = Forecast.new(params[:long], params[:lat]).weather
     render json: @weather
   end
 
   def coordinates
-    params.require(:forecasts).permit(:longitude, :latitude)
+    params.require(:forecasts).permit(:long, :lat)
   end
 end
